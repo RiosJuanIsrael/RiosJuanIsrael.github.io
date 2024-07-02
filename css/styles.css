@@ -1,607 +1,805 @@
-/******* ESTILOS GENERALES - MOBILE FIRST ********/
+/* Mobile first */
+
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: #f2f2f2;
-    font-family: "Poppins", sans-serif;
-    color: black;
+    background-color: #D6D7D7;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /*agregue esto*/
 }
 
-.contenedor {
+/*----------------------- Tamaño de las imagenes------------------ */
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+/* -------------------------- Grid al contenedor ------------------*/
+
+.contenedor{
     display: grid;
-    padding: 10px;
-    width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr, 3fr, 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
-                        "header"
-                        "main"
-                        "aside"
-                        "footer";
-    gap: 15px;
+    "header"
+    "main"
+    "footer";
 }
 
-/* CABECERA */
+/* ---------------------------------------------------------------- Header --------------------------------------------------------------------- */
 header {
-    width: 100%;
     grid-area: header;
-    background: yellow;
+    background-color: #010B17;
+    padding-top: 16px;
+    border: solid #51E422;
 }
 
-header p {
-    text-align: center;
-    font-weight: bolder;
-    font-size: 40px;
-    text-shadow: 1px 1px 2px orange;
-    color: #000;
+.titanium {
+    display: flex;
+    justify-content: center;
 }
 
-header nav {
-    margin: 0;
-    z-index: 0;
+.titanium img {
+    border-radius: 0;
+    width: 80%;
+    height: auto;
 }
 
-header nav ul li {
-    list-style: none;
-    padding: 5px;
+/* ---------------------- Navegación ---------------------*/
+nav {
+    background-color: #010B17;
 }
 
-header nav ul li a {
+.btnMenu {
+    padding: 10px;
+    color: #51E422;
+}
+
+.btnMenu a {
     text-decoration: none;
 }
 
-header nav .fa-bars {
-    padding: 5px;
-    margin-left: 10px;
-    font-size: 20px;
-}
-
-header nav .fa-times {
+.menu {
+    margin-top: 8px;
+    border-block: 2px solid gray;
     display: flex;
-    padding: 5px;
-    margin-right: 10px;
-    font-size: 20px;
-    justify-content: flex-end;
+    background-color: #010B17;
 }
 
-.menu{
-    display: none
+ul.botonera {
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
 }
 
-.visible{
+ul.botonera.mostrar {
+    display: flex;
+}
+
+ul.botonera li {
+    list-style: none;
+    margin: 0;
+    padding: 15px 20px;
+}
+
+ul.botonera li a {
+    text-decoration: none;
+    color: #51E422;
+}
+
+
+/* ------------------------------------------------------- Main couches y disciplinas -----------------------------------------------------------*/
+
+.mainIndex {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "contenedorFotos"
+    "frase"
+    "fotosGym"
+    "nosotros";
+}
+
+.contenedorFotos{
+    grid-area: contenedorFotos ;
+}
+
+.contenedorFotos p {
+    padding: 8px;
+    border: 5px solid  #51E422;
+    background-color: #010B17;
+    color:  #51E422;
+    text-align: center;
+    font-size: 24px;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.mainIndex .contenedorFotos figure {
+    padding-block: 10px;
+}
+
+.mainIndex .contenedorFotos figcaption {
+    border-radius: 16px;
+    text-align: center;
+    padding-block: 5px;
+}
+
+.mainIndex .contenedorFotos figcaption:hover {
+    background-color:#D6D7D7;
+}
+
+.mainIndex .contenedorFotos figcaption a {
+    color: green;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.couches1, .couches2, .couches3, .couches4 {
+    display: flex;
+    justify-content: space-around; 
+}
+
+.couches1, .couches3 {
+    border: solid #010B17;
+    background-color: #4CAF50;
+}
+
+.couches2, .couches4 {
+    border: solid #4CAF50;
+    background-color: #010B17;
+}
+
+.couches1 figcaption, .couches3 figcaption {
+    background-color: #010B17;
+}
+
+.couches2 figcaption, .couches4 figcaption {
+    background-color: #4CAF50;
+}
+
+/* --------------------------------------------------------------- Aside frase ----------------------------------------------------------------- */
+aside {
+    grid-area: frase; 
+    background-color: #021020;
+    margin: 8px; /*agregue*/
+    padding-block: 16px;
+}
+ 
+.frase h4 {
+    text-align: center;
+    font-size: 24px;
+    color: #51E422;
+}
+ 
+/*-------------------------------------------------------Section para las fotos y el cartel----------------------------------------------------- */
+.fotosGym {
+    width: 100%;
+    grid-area: fotosGym;
+    position: relative;
+    display: flex;
+}
+
+.fotosGym img {
+    height: auto;
+    border-radius: 0%;
+    width: 100%;
+}
+
+body .cartel {
+    position: absolute;
+    top: 49%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #010B17 ;
+    color: #51E422;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1; 
+}
+
+/* ------------------------------------------------------------Section nosotros ----------------------------------------------------------------*/
+.nosotros {
+    grid-area: nosotros;
+    padding: 16px;
+    color: #010B17;
+}
+
+.nosotros h1, .nosotros h3 {
+    padding: 16px;
+}
+
+/* -------------------------------------------------------------------Footer --------------------------------------------------------------------*/
+footer {
+    grid-area: footer;
+    display: flex;
+    background-color: #010B17;
+    display: flex;
+    justify-content: space-around;
+    color: #51E422; 
+}
+
+footer img {
+    width: 50px;
+    height: 50px;
+}
+
+/*-------------------------------------------------------------HTML Horarios y descuentos-------------------------------------------------------*/
+
+.nuestrosHorarios{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "horarios"
+    "tablaDinamica"
+    "descuentos"    
+    ;
+}
+
+.nuestrosHorarios h1 {
+    margin: 8px;
+    padding: 8px;
+    border: 5px solid  #51E422;
+    background-color: #010B17;
+    color:  #51E422;
+    text-align: center;
+    font-size: 16px;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.nuestrosHorarios h2 {
+    margin: 8px;
+    color: #010B17;
+    text-align: left;
+    font-size: 12px;
+}
+
+.horarios {
+    grid-area: horarios;
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    position: absolute;
-    z-index: 1;
-    background: gold;
-    width: 200px;
+    width: 100%; 
+    max-width: 1000px;
 }
 
-.visible li{
-    margin: 10px 0;
+table{
+    width: 100%; 
+    background-color: #010B17;
+    color: #4CAF50;
+    font-size: 12px;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
 }
 
-.visible a{
-    color: inherit;
-    font-weight: bold;
-    padding-left: 10px;
+thead th {
+    color: #D6D7D7;
+    padding: 10px;
 }
 
-/* ESTILOS MAIN */
-main {
-    width: 100%;
-    grid-area: main;
-    border-top: 1px solid lightgrey;
-    margin: 10px 0;
+tbody td {
+    border: 1px solid #4CAF50;
+    padding: 8px;
+    text-align: center;
+}
+
+.tablaDinamica{
+    grid-area: tablaDinamica;
+    display: flex;
+    flex-direction: column;
+}
+
+#contenedor-formAct{
+    margin: 8px;
+    padding: 24px;
+    border: 2px solid #4CAF50;
+    background-color: #010B17;
+}
+
+
+#formActividad label, input{
+    margin-block: 10px;
+    padding: 8px;
+    color: #4CAF50;
+}
+
+#formActividad input{
+    color: #010B17;
+    margin: 5px;
     padding: 5px;
 }
 
-main section {
-    padding: 10px;
+#contenedor-formAct .botonesTabla{
+    display: inline;
+    justify-content: space-around;
+    margin: 16px;
 }
 
-/* MAIN INDEX */
-main section h1 {
-    text-align: center;
-    text-decoration: underline;
-    font-size: 30px;
-    margin-bottom: 5px;
+#contenedor-formAct .botonesTabla button{
+    margin: 16px;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: #D6D7D7;
 }
 
-main section article h2 {
-    font-size: 20px;
-    text-align: justify;
+.btnEditar, .btnBorrar{
+    background-color: #4CAF50;
+    color: #D6D7D7;
 }
 
-main section article img {
-    width: 100%;
+.nuestrosHorarios .descuentos {
+   grid-area: descuentos;    
+   display: flex;
+   flex-direction: column;
 }
 
-main section article p {
-    text-align: justify;
-    font-size: 15px;
-    border-bottom: 1px solid lightgrey;
-    padding-bottom: 5px;
+.nuestrosHorarios .descuentos .mediosPago, .gruposDescuento{  
+    display: inline;
+    border: dashed black ;
+    margin-block: 16px;
+    padding-inline: 8px;
 }
 
-/* ESTILOS MAIN ESTRENOS */
-.mainEstrenos h1{
-    text-align: center;
-    text-decoration: underline;
+.descuentos h1 {
+    margin-block: 16px;
+    text-align: center; 
+    font-size: 12px;
 }
 
-.mainEstrenos section h2{
-    text-decoration: underline;
-    text-align: center;
+.descuentos ul li {
+    padding-block: 8px;
+    list-style: disc;
+    color: #010B17;
 }
 
-.mainEstrenos article{
-    margin-bottom: 20px;
-}
-
-.mainEstrenos section article h3{
-    text-align: center;
-}
-
-.mainEstrenos section article p{
-    text-align: center;
-}
-
-.mainEstrenos section article iframe{
-    display: none;
-}
-
-/*ESTILOS CONTACTO*/
-.main-contacto h1{
-    text-align: center;
-}
-
-.main-contacto p{
-    text-align: justify;
-}
-
-.main-contacto .formulario{
-    display: block;
-    margin: auto;
-    background: rgba(0, 0, 0, 0.377);
-    padding: 10px;
-}
-
-.main-contacto .formulario input{
-    width: 100%;
-    padding: 5px
-}
-
-.main-contacto .formulario .titulo-genero, .titulo-captcha{
-    text-align: center;
-    border-bottom: 1px solid black;
-}
-
-.main-contacto .formulario .genero{
-    display: block;
-}
-
-.main-contacto .formulario .genero p{
-    text-align: center;
-}
-
-.main-contacto .formulario .titulo-textarea{
-    margin-top: 5px;
-}
-
-.main-contacto .formulario textarea{
-    width: 100%;
-}
-
-.main-contacto .formulario .captcha input{
-    margin: 10px 0;
-    text-align: center;
-}
-
-.main-contacto .formulario .captcha p{
-    color: red;
-    font-weight: bold;
-    text-align: center;
-}
-
-.main-contacto .formulario input[type=submit]{
-    font-size: 15px;
-    background: lightgray;
-    border: 1px solid grey;
-}
-
-/* ASIDE INDEX */ 
-/* ESTILOS GENERALES AL ASIDE */
-aside {
-    grid-area: aside;
-    display: block;
-    padding: 10px;
-    border-left: 1px solid lightgrey;
-}
-
-aside p{
-    color: #000;
-}
-
-aside p span{
-    font-style: italic;
-    font-size: 0.9em;
-}
-
-/* ESTILOS ASIDE INDEX */
-aside h2 {
-    text-align: center;
-}
-
-aside ol li {
-    margin-left: 15px;
-}
-
-aside ol li a {
-    color: black;
-}
-
-/* ASIDE ESTRENOS--> TABLA ESTATICA */
-.asideEstrenos section table{
-    border: 1px solid black;
-    text-align: center;
-    width: 100%;
-}
-
-.asideEstrenos section table thead{
-    background: grey;
+.descuentos .mediosPago #destacado, .gruposDescuento #destacado{
+    background-color:#4CAF50;
     font-weight: bold;
 }
 
-.asideEstrenos section table tbody{
-    background: lightgray;
+/*----------------------------------------------------------HTML Salud---------------------------------------------------------------*/
+
+
+.salud .saludBeneficios h1, h2{
+    margin: 16px;
+    font-size: 16px;
 }
 
-  /* ASIDE ESTRENOS ----> BOLETERIA ONLINE */
-.asideEstrenos .tablaDinamica{
-    display: block;
-    margin: auto;
-    width: 100%;
+.salud .saludBeneficios h1{
+    background-color: #010B17;
+    padding: 8px;
+    color: #4CAF50;
+    text-align: center;
 }
 
-.asideEstrenos .tablaDinamica  form{
+.salud .saludBeneficios h2{
+    color: #010B17;
+    text-align: left;
+}
+
+.salud .saludBeneficios ol li{
+    font-weight: bold;
+    font-style: oblique;
+    margin: 5px;
+}
+
+.especialistas h1{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 16px;
+    padding: 8px;
+    background-color: #010B17;
+    color: #4CAF50;
+}
+
+.especialistas .medicos figure{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.asideEstrenos .tablaDinamica .submit{
+.medicos figure img{
+    margin-block: 16px;
+}
+
+.medicos figure figcaption{
+    margin-block: 16px;
+}
+
+.medicos figure figcaption a{
+    text-decoration: none;
+    padding: 12px;
+    background-color: #4CAF50;
+}
+
+.medicos figure figcaption:hover{
+    background-color: #D6D7D7;
+}
+
+/*--------------------------------------------------------------HTML contacto--------------------------------------------------------------------*/
+
+.formulario {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.formulario h1 {
+    font-size: 16px;
+    text-align: center;
+    color: #51E422;
+    margin-bottom: 24px;
+}
+
+.formulario p {
+    color: #4CAF50;
+    margin-bottom: 24px;
+}
+
+.formulario label {
+    display: block; 
+    margin-bottom: 20px;
+    color: white;
+}
+
+.formulario input #nombre,        
+.formulario input #email,
+.formulario input #telefono,
+.formulario textarea {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 20px 0;
-}
-
-.asideEstrenos .tablaDinamica input[type=number]{
-    text-align: center;
-}
-
-.asideEstrenos .tablaDinamica h2{
-    text-align: center;
-    margin-top: 20px;
-}
-
-.asideEstrenos .tablaDinamica p{
+    padding: 10px;
     margin-bottom: 10px;
+    border-radius: 3px;
+    font-size: 16px;
 }
 
-.asideEstrenos .tablaDinamica table{
-    width: 100%;
+.formulario input #genero-otro {
+    margin-right: 10px;
+}
+
+.formulario button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color:#010B17;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.formulario button:hover {
+    background-color: #D6D7D7;
+}
+
+#captcha-contenedor {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
 }
 
-.asideEstrenos .tablaDinamica input[type=submit], .submit button{
-    padding: 5px;
-    font-size: 14px;
+#captcha-texto {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #010B17;
+    margin-inline: 50px;
     font-weight: bold;
+    border-radius: 5px;
 }
 
-.asideEstrenos .tablaDinamica input[type=submit]{
-    margin-top: 20px;
+#captcha-input {
+    padding: 5px;
+    border-radius: 5px;
+    margin-block: 10px ;
+    margin-right: 10px;
 }
 
-#tabla_total{
-    width: 50%;
+#refrescar-captcha{
+    margin-inline: 100px ;
 }
 
-#total{
-    background-color: lightgrey;
+
+#form{
+    background-color:#010B17;
+    padding: 16px;
 }
 
-footer {
-    grid-area: footer;
-    background: #000;
-    color: white;
+.contacto #btn-enviar  {
+    align-self: center;
+    margin-top: 20px; 
+    margin-left: 60px;
+}
+
+.numMedicos {
+    background-color: #4CAF50;
+    margin-block: 20px;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.numMedicos h2 {
+    font-weight: bold;
     text-align: center;
+    font-size: 16px;
+    color:black;
+    margin-bottom: 16px;
 }
 
-footer .social {
-    padding: 5px 0;
+.numMedicos h3 {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 16px;
 }
 
-footer .social i {
-    text-shadow: 1px 2px 2px lightgray;
+.ubicacion {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    border-radius: 5px;
 }
 
-.oferta {
-    background: yellow;
-}
+/*.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-*/
+/*------------------------------------------------------------------MEDIA QUERY-----------------------------------------------------------------------*/
+/*.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-*/
 
-/******* TABLET *******/
-@media only screen and (min-width: 500px) {
-.contenedor {
-    width: auto;
-    grid-template-columns: 1fr, 1fr, 1fr;
-    grid-template-rows: 1fr, 3fr, 3fr, 1fr;
-    grid-template-areas:
+@media (min-width:700px){
+
+   
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .contenedor {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
             "header header header"
             "main main main"
-            "aside aside aside"
             "footer footer footer";
-    gap: 5px;
-}
+    }
 
-/* ESTILOS AL ENCABEZADO Y AL MENU */
-header {
-    grid-area: header;
-}
+    .mainIndex {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+            "frase contenedorFotos contenedorFotos"
+            "frase contenedorFotos contenedorFotos"
+            "fotosGym fotosGym fotosGym"
+            "nosotros nosotros nosotros";
+    }
 
-header nav ul li {
-    list-style: none;
-    padding: 5px;
-}
+    .contenedorFotos {
+        grid-area: contenedorFotos;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "p p"
+            "couches2 couches3"
+            "couches1 couches4";
+    }
 
-header nav ul li a {
-    text-decoration: none;
-}
+    .header { grid-area: header; }
 
-/* ESTILOS GENERALES AL MAIN */
-main {
-    grid-area: main;
-}
+    nav {
+        background: linear-gradient(to right, #010B17, green, yellowgreen, green, #010B17);
+    }
 
-main p{
-    color: #000;
-}
+    .btnMenu {
+        display: none;
+    }
 
-/* ESTILOS MAIN - ESTRNEOS */
-.mainEstrenos section article p{
-    display: none;
-}
+    ul.botonera {
+        display: flex;
+        flex-direction: row;
+    }
 
-.mainEstrenos section article iframe{
-    display: block;
-    margin: auto;
-    width: 400px;
-    height: 250px;
-}
+    .menu {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
 
-/* ESTILOS MAIN - CONTACTO*/
-.main-contacto{
-    background-image: url(../images/fondo-contacto.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-}
+    .botonera {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
 
-.main-contacto h1{
-    color: #f2f2f2;
-}
+    .botonera li {
+        padding: 10px;
+        margin-inline: 24px;
+        background-color: #010B17;
+        border: solid #51E422;
+        text-decoration: none;
+        list-style: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #51E422;
+        border-radius: 24px;
+    }
 
-.main-contacto p{
-    color: #f2f2f2;
-    text-align: center;
-}
+    nav ul li:hover {
+        background-color: #D6D7D7;
+    }
 
-.main-contacto .formulario{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.377);
-    width: 80%;
-}
+    header {
+        grid-area: header;
+        background-color: #010B17;
+    }
 
-.main-contacto .formulario input[type="text"]{
-    width: 50%;
-}
+    nav {
+        padding: 20px;
+    }
 
-.main-contacto .formulario input[type="email"], .titulo-genero{
-    width: 50%;
-}
+    .main { grid-area: main; }
 
-.main-contacto .formulario .titulo-genero, .titulo-captcha{
-    margin-top: 20px;
-    color: #f2f2f2;
-    border-bottom: 1px solid white;
-    width: 50%;
-}
+    .footer { grid-area: footer; }
 
-.main-contacto .formulario .genero{
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+    .frase { 
+        grid-area: frase; 
+    }
 
-.main-contacto .formulario label{
-    color: #f2f2f2;
-}
+    .frase h4 {
+        padding-block: 48px;
+        padding-inline: 16px;
+        text-align: center;
+        font-size: 48px;
+    }
 
-.main-contacto .formulario .textarea{
-    width: 50%;
-}
+    .contenedorFotos { grid-area: contenedorFotos; }
 
-.main-contacto .formulario .captcha{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-}
+    .fotosGym { grid-area: fotosGym; }
 
-.main-contacto .formulario .captcha p{
-    color: #f2f2f2;
-}
+    .nosotros { grid-area: nosotros; }
 
-.main-contacto .formulario input[type="submit"]{
-    width: 100px;
-}
+    .parrafo { grid-area: p; }
 
-/* ESTILOS GENERALES AL ASIDE */
-aside {
-    grid-area: aside;
-}
+    .couches1 { grid-area: couches1; }
+    .couches2 { grid-area: couches2; }
+    .couches3 { grid-area: couches3; }
+    .couches4 { grid-area: couches4; }
 
-/* ESTILOS GENERALES AL FOOTER */
-footer {
-    grid-area: footer;
-}
-}
+  
+/*----------------------------------------------------------HTML Horarios y descuentos----------------------------------------------------------*/
+    .nuestrosHorarios{
+        grid-area: main;
+        width: 100%;
+    }
 
-/******* ESCRITORIO *******/
-@media only screen and (min-width: 900px){
-.contenedor {
-        width: auto;
-        gap: 15px;
-        grid-template-columns: 4fr, 1fr;
-        grid-template-rows: 1fr, 4fr, 3fr, 1fr;
-        grid-template-areas:
-            "header  header"
-            "main  aside"
-            "main  aside"
-            "footer  footer";
-}
+    .nuestrosHorarios h2{
+    background-color:#D6D7D7;
+    padding-left: 20px;
+    }
 
-header{
-    grid: header;
-}
-
-header nav .fa-bars{
-    display: none;
-}
-
-header nav ul .fa-times{
-    display: none;
-}
-
-header nav{
+    .descuentos{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    background: gold;
-}
+    margin: 2px;
+    border-top: 5px solid #010B17 ;
+    }
 
-header nav .menu{
-    margin-left: 0;
+    .descuentos .mediosPago,.gruposDescuento{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: inherit;
-}
+    flex-direction: column;  
+    margin-block: 0;
+    margin-inline: 5%; 
+    }
 
-header nav .menu li a {
-    padding: 0 5px;
-    color: inherit;
-    text-decoration: none;
-}
-
-header nav .menu li a:hover {
-    border-bottom: 1px solid black;
-    font-weight: bold;
-    text-shadow: 1px 2px 2px goldenrod;
-}
-
-/* ESTILOS GENERALES AL MAIN*/
-main{
-    grid-area: main;
-}
-
-/* ESTILOS MAIN - ESTRENOS */
-.mainEstrenos{
-    display: block;
-    margin: auto;
-}
-
-.mainEstrenos section{
+    .horarios{
+    background-color:#D6D7D7;
+    padding: 8px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.mainEstrenos section article h3{
-    text-align: center;
-}
+/*-----------------------------------------------------------------HTML Salud------------------------------------------------------------------*/
 
-.mainEstrenos section article p{
-    display: none;
-}
+    .salud{
+        grid-area: main;
+        width: 100%;
+    }
 
-.mainEstrenos section article iframe{
-    width: 500px;
-    height: 300px;
-}
+  
+    /* -----Ajustes para fotos-gym y cartel----- */
+    .fotosGym {
+        grid-area: fotosGym;
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
 
-/* ESTILOS GENERALES ASIDE */
-aside{
-    grid-area: aside;
-}
+    .fotosGym img {
+        width: 100%;
+        height: auto;
+        border-radius: 0%;
+    }
 
-/* ESTILOS ASIDE INDEX */
-aside ol li:hover{
-    background: black;
-}
+    body .cartel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px;
+        background-color: #010B17;
+        color: #51E422;
+        font-size: 24px;
+        text-align: center;
+        z-index: 1; 
+    }
 
-aside ol li:hover a{
-    color: #f2f2f2;
-}
+      
 
-/* ESTILOS ASIDE ESTRENOS */
-.asideEstrenos section{
-    padding: 10px;
-    display: block;
-    margin: auto;
-}
+/*----------------------------------------------HTML Actividades y horarios----------------------------------------------------------------*/
 
-.asideEstrenos h2{
-    text-align: center;
-}
 
-.asideEstrenos p{
-    text-align: justify;
-}
 
-.asideEstrenos section table{
-    border: 1px solid black;
-    text-align: center;
-    width: 90%;
-}
+        .especialistas{
+            display: flex;
+            flex-direction: column;
+        }
 
-.asideEstrenos section table thead{
-    background: grey;
-    font-weight: bold;
-}
+        .especialistas .medicos{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
 
-.asideEstrenos section table tbody{
-    background: lightgray;
-}
+        .especialistas .medicos figure{
+            margin-block: 16px;
+            margin-inline: 32px;
+        }
 
-footer{
-    grid-area: footer;
-}
+        .especialistas h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-footer i:hover{
-    text-shadow: 2px 4px 4px lightgrey;
-}
-}
+        .formulario{
+            grid-area: main;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .contacto{
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
+        #captcha-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    
+  
+}
