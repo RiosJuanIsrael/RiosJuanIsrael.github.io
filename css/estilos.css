@@ -168,7 +168,7 @@ ul.botonera li {
 aside {
     grid-area: frase; 
     background-color: #021020;
-    margin: 8px; /*agregue*/
+    margin: 8px;
     padding-block: 16px;
 }
  
@@ -269,16 +269,15 @@ footer img {
     display: flex;
     flex-direction: column;
     width: 100%; 
-    max-width: 1000px;
 }
 
-table{
-    width: 100%; 
+table, .tablaFija{
+    width: 80%; 
     background-color: #010B17;
     color: #4CAF50;
     font-size: 12px;
     border-collapse: collapse;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     overflow-x: auto;
 }
@@ -296,17 +295,20 @@ tbody td {
 
 .tablaDinamica{
     grid-area: tablaDinamica;
-    display: flex;
-    flex-direction: column;
 }
 
 #contenedor-formAct{
-    margin: 8px;
+    margin: 16px auto;
+    width: 80%;
     padding: 24px;
     border: 2px solid #4CAF50;
-    background-color: #010B17;
+    background-color: #010B17;    
 }
 
+#formActividad div{
+    display: flex;
+    justify-content: center;
+}
 
 #formActividad label, input{
     margin-block: 10px;
@@ -315,14 +317,17 @@ tbody td {
 }
 
 #formActividad input{
+    padding: 5px;
     color: #010B17;
-    margin: 5px;
+}
+
+#formActividad label{
     padding: 5px;
 }
 
+
 #contenedor-formAct .botonesTabla{
-    display: inline;
-    justify-content: space-around;
+    justify-content: center;
     margin: 16px;
 }
 
@@ -560,248 +565,206 @@ tbody td {
 @media (min-width:700px){
 
    
-    * {
-        margin: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 
-    .contenedor {
-        display: grid;
-        width: 100%;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 
+.contenedor {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
             "header header header"
             "main main main"
             "footer footer footer";
     }
 
-    .mainIndex {
-        display: grid;
-        width: 100%;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto auto;
-        grid-template-areas: 
-            "frase contenedorFotos contenedorFotos"
-            "frase contenedorFotos contenedorFotos"
-            "fotosGym fotosGym fotosGym"
-            "nosotros nosotros nosotros";
+.mainIndex {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+        "frase contenedorFotos contenedorFotos"
+        "frase contenedorFotos contenedorFotos"
+        "fotosGym fotosGym fotosGym"
+        "nosotros nosotros nosotros";
     }
 
-    .contenedorFotos {
-        grid-area: contenedorFotos;
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 
-            "p p"
-            "couches2 couches3"
-            "couches1 couches4";
+.contenedorFotos {
+    grid-area: contenedorFotos;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "p p"
+        "couches2 couches3"
+        "couches1 couches4";
     }
 
-    .header { grid-area: header; }
+.header { grid-area: header; }
 
-    nav {
-        background: linear-gradient(to right, #010B17, green, yellowgreen, green, #010B17);
+ nav {
+    background: linear-gradient(to right, #010B17, green, yellowgreen, green, #010B17);
     }
 
-    .btnMenu {
-        display: none;
+.btnMenu {
+    display: none;
     }
 
-    ul.botonera {
-        display: flex;
-        flex-direction: row;
+ul.botonera {
+    display: flex;
+    flex-direction: row;
     }
 
-    .menu {
-        display: flex;
-        justify-content: end;
-        align-items: center;
+.menu {
+    display: flex;
+    justify-content: end;
+    align-items: center;
     }
 
-    .botonera {
-        display: flex;
-        justify-content: end;
-        align-items: center;
+.botonera {
+    display: flex;
+    justify-content: end;
+    align-items: center;
     }
 
-    .botonera li {
-        padding: 10px;
-        margin-inline: 24px;
-        background-color: #010B17;
-        border: solid #51E422;
-        text-decoration: none;
-        list-style: none;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: #51E422;
-        border-radius: 24px;
+.botonera li {
+    padding: 10px;
+    margin-inline: 24px;
+    background-color: #010B17;
+    border: solid #51E422;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #51E422;
+    border-radius: 24px;
     }
 
-    nav ul li:hover {
-        background-color: #D6D7D7;
+nav ul li:hover {
+    background-color: #D6D7D7;
     }
 
-    header {
-        grid-area: header;
-        background-color: #010B17;
+header {
+    grid-area: header;
+    background-color: #010B17;
     }
 
-    nav {
-        padding: 20px;
+nav {
+    padding: 20px;
     }
 
-    .main { grid-area: main; }
+.main { grid-area: main; }
 
-    .footer { grid-area: footer; }
+.footer { grid-area: footer; }
 
-    .frase { 
-        grid-area: frase; 
+.frase { grid-area: frase; }
+
+.frase h4 {
+    padding-block: 48px;
+    padding-inline: 16px;
+    text-align: center;
+    font-size: 48px;
     }
 
-    .frase h4 {
-        padding-block: 48px;
-        padding-inline: 16px;
-        text-align: center;
-        font-size: 48px;
-    }
+.contenedorFotos { grid-area: contenedorFotos; }
 
-    .contenedorFotos { grid-area: contenedorFotos; }
+.fotosGym { grid-area: fotosGym; }
 
-    .fotosGym { grid-area: fotosGym; }
+.nosotros { grid-area: nosotros; }
 
-    .nosotros { grid-area: nosotros; }
+.parrafo { grid-area: p; }
 
-    .parrafo { grid-area: p; }
-
-    .couches1 { grid-area: couches1; }
-    .couches2 { grid-area: couches2; }
-    .couches3 { grid-area: couches3; }
-    .couches4 { grid-area: couches4; }
+.couches1 { grid-area: couches1; }
+.couches2 { grid-area: couches2; }
+.couches3 { grid-area: couches3; }
+.couches4 { grid-area: couches4; }
 
   
 /*----------------------------------------------------------HTML Horarios y descuentos----------------------------------------------------------*/
-    .nuestrosHorarios{
-        grid-area: main;
-        width: 100%;
+.nuestrosHorarios{
+    grid-area: main;
+    width: 100%;
     }
 
-    .nuestrosHorarios h2{
+.nuestrosHorarios h2{
     background-color:#D6D7D7;
     padding-left: 20px;
     }
 
-    .descuentos{
-    display: flex;
-    flex-direction: row;
-    margin: 2px;
-    border-top: 5px solid #010B17 ;
-    }
-
-    .descuentos .mediosPago,.gruposDescuento{
-    display: flex;
-    flex-direction: column;  
-    margin-block: 0;
-    margin-inline: 5%; 
-    }
-
-    .horarios{
-    background-color:#D6D7D7;
+.horarios {
     padding: 8px;
+    width: 100%;
+    }
+    
+.nuestrosHorarios .descuentos {
+    grid-area: descuentos;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    flex-direction: row; 
+    justify-content: space-around; 
+    margin: 20px 0; 
+    }
+        
+.nuestrosHorarios .descuentos .mediosPago, .nuestrosHorarios .descuentos .gruposDescuento {
+    margin: 0; 
+    flex: 1; 
+    }
 
 /*-----------------------------------------------------------------HTML Salud------------------------------------------------------------------*/
 
-    .salud{
-        grid-area: main;
-        width: 100%;
+.salud{
+    grid-area: main;
+    width: 100%;
     }
-
-  
-    /* -----Ajustes para fotos-gym y cartel----- */
-    .fotosGym {
-        grid-area: fotosGym;
-        position: relative;
-        display: flex;
-        width: 100%;
-    }
-
-    .fotosGym img {
-        width: 100%;
-        height: auto;
-        border-radius: 0%;
-    }
-
-    body .cartel {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 40px;
-        background-color: #010B17;
-        color: #51E422;
-        font-size: 24px;
-        text-align: center;
-        z-index: 1; 
-    }
-
-      
 
 /*----------------------------------------------HTML Actividades y horarios----------------------------------------------------------------*/
 
 
 
-        .especialistas{
-            display: flex;
-            flex-direction: column;
-        }
+.especialistas{
+    display: flex;
+    flex-direction: column;
+    }
 
-        .especialistas .medicos{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
+.especialistas .medicos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
 
-        .especialistas .medicos figure{
-            margin-block: 16px;
-            margin-inline: 32px;
-        }
+.especialistas .medicos figure{
+    margin-block: 16px;
+    margin-inline: 32px;
+    }
 
-        .especialistas h1{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.especialistas h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     }
 
-        .formulario{
-            grid-area: main;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .contacto{
-            width: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+.formulario{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+.contacto{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }      
 
-        #captcha-container{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
+}
     
   
-}
+
 
 
 
